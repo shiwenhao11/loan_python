@@ -2,8 +2,10 @@
 python testing
 
 
-nose-html-reporting报告的本地化和显示优化  
-命令：
+nose-html-reporting报告的本地化和显示优化包地址：
+https://github.com/mingyu0519/nose-html-reportingCN
+
+nose执行命令：
 nosetests --with-html --html-report=output/test_report.html --html-report-template=/Library/Python/2.7/site-packages/nose_html_reporting/templates/report2.jinja2
 
 依赖包安装

@@ -1,31 +1,67 @@
 #coding=utf-8
+
 import random
-# class Create_Mobile_Num:
-#     def create_mobile_num(self,nu):
-#         self.num=num
-#
-#
-# mobile_num = random.choice(['139','138','185','136','158','159'])+"".join(random.choice("0123456789") for i in range(8))
-#
-# print mobile_num
-
-#模拟get请求
-# import urllib,urllib2
-# url='https://m.stb.nonobank.com/feserver/mzjk/promotion/home'
-# textmod ={'user':'admin','password':'admin'}
-# textmod = urllib.urlencode(textmod)
-# print(textmod)
-# #输出内容:password=admin&user=admin
-# req = urllib2.Request(url)
-# res = urllib2.urlopen(req)
-# res = res.read()
-# print(res)
-#输出内容:登录成功
+import urllib2
+import simplejson
 
 
-def test_numbers_3_4():
 
-    assert 1 == 1
+def create_mobile_num():
+    mobile_num = random.choice(['139','138','185','136','158','159'])+"".join(random.choice("0123456789") for i in range(8))
+    return mobile_num
+
+mobile_num = create_mobile_num()
+
+hosturl = 'http://192.168.3.176:8085/usr-app/usr/register/doRegister'
+
+post_data = simplejson.dumps({
+  "passWord": "",
+  "imgKey": "",
+  "adPlan": "",
+  "referer": "",
+  "bizCode": "mzjk",
+  "openId": "",
+  "registerType": "FASTM",
+  "registerApproach": "1",
+  "deviceId": "",
+  "channelDetail": "",
+  "advisor": "",
+  "inviteMobile": "",
+  "clientType": "pc",
+  "pcId": "1",
+  "channelId": "",
+  "mobileCode": "888888",
+  "tokenId": "",
+  "landingPage": "",
+  "ip": "192.168.1.111",
+  "mobile": mobile_num,
+  "adUnit": "",
+  "csUserType": "1",
+  "imgCode": "",
+  "mobileKey": mobile_num,
+  "userName": "",
+  "approach9": "",
+  "approach8": "",
+  "approach5": "",
+  "approach4": "",
+  "approach7": "",
+  "blackBox": "1",
+  "approach6": "",
+  "inviteCode": "",
+  "approach10": "",
+  "userType": "2",
+  "operation": ""
+})
+#发送post请求
+Response  = urllib2.Request(hosturl, post_data, {'Content-Type':'application/json'})
+f = urllib2.urlopen(Response)
+Res = f.read()
+f.close()
+
+print Res
+
+
+
 
 
 

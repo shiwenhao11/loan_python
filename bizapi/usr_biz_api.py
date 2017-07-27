@@ -1,8 +1,9 @@
-import urllib2
+#coding=utf-8
+
 import simplejson
 import urllib2
 
-import simplejson
+from utils.base_tools import *
 
 
 def usr_api_doRegister():

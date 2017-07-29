@@ -4,11 +4,15 @@ import simplejson
 import urllib2
 
 from utils.base_tools import *
+from config.config_env import *
+
+
 
 
 def usr_api_doRegister():
+
     mobile_num = create_mobile_num()
-    hosturl = 'http://192.168.3.176:8085/usr-app/usr/register/doRegister'
+    url = config_url.usr + 'usr/register/doRegister'
 
     post_data = simplejson.dumps({
     "passWord": "",
@@ -49,9 +53,10 @@ def usr_api_doRegister():
     "operation": ""
     })
     #发送post请求
-    Response  = urllib2.Request(hosturl, post_data, {'Content-Type':'application/json'})
+    Response  = urllib2.Request(url, post_data, {'Content-Type':'application/json'})
     f = urllib2.urlopen(Response)
     Res = f.read()
     f.close()
 
-    print Res
+    return Res
+

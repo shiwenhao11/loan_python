@@ -7,11 +7,12 @@ import email.mime.image
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 
+#定义收件人
+to_list='fenghua@nonobank.com','shiwenhao@nonobank.com','luyue@nonobank.com','suzhiyu@nonobank.com','songqi@nonobank.com','goujingwei@nonobank.com'
+
 
 #配置邮箱信息
 msg = email.mime.multipart.MIMEMultipart()
-msg['from'] = 'shiwenhao@nonobank.com'      #发件人邮箱
-msg['to'] = 'suzhiyu@nonobank.com'          #收件人邮箱
 msg['subject'] = '贷款组测试报告'             #邮件主题
 
 #查找当前目录下html文件
@@ -48,6 +49,5 @@ smtp = smtplib
 smtp = smtplib.SMTP()
 smtp.connect('mail.nonobank.com')          # 邮箱smtp地址
 smtp.login('shiwenhao', 'Swh1314521')      #发件人邮箱账号密码
-smtp.sendmail('shiwenhao@nonobank.com', 'suzhiyu@nonobank.com', 'luyue@nonobank.com', 'fenghua@nonobank.com',
-              'songqi@nonobank.com', 'goujingwei@nonobank.com', str(msg))   #发件人收件人
+smtp.sendmail('shiwenhao@nonobank.com', to_list, msg.as_string())   #发件人收件人
 smtp.quit()

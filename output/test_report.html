@@ -179,8 +179,8 @@ function html_escape(s) {
       </h3>
    </div>
    <div class="panel-body">
-      <p><strong>开始时间：</strong>2017-07-29 16:16:31</p>
-      <p><strong>耗时：</strong>0:00:00.356736</p>
+      <p><strong>开始时间：</strong>2017-07-29 16:37:51</p>
+      <p><strong>耗时：</strong>0:00:00.190232</p>
       <p><strong>总共：1</strong>，通过：0，失败：1，错误：0，跳过：0</p>
    </div>
 </div>
@@ -237,7 +237,7 @@ function html_escape(s) {
             <td class="failCase">
                 test_user_register
             </td>
-            <td>0:00:00.356736</td>
+            <td>0:00:00.190232</td>
             <td colspan='4' align='center'>
             <!--css div popup start-->
             <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_mzjk_cases.test_logintest_user_register')" >
@@ -249,9 +249,8 @@ function html_escape(s) {
                 <a onfocus='this.blur();' onclick="document.getElementById('div_mzjk_cases.test_logintest_user_register').style.display = 'none' " >
                    [x]</a>
                 </div>
-                <pre>{"errorCode":"0000000","succeed":true,"errorMessage":"成功","data":{"cardNeedcheck":0,"financeAdvisorManager":null,"isSync":1,"isBbsSync":0,"nonoIdChecked":0,"userType":2,"pcId":1,"idNum":null,"mobileNum":"13603966063","email":null,"isMobile":1,"isEmail":0,"isCard":0,"age":null,"isDunning":0,"isEducation":0,"userKey":"8c7a1db658d3b143a08863b5326e0d19","customerServicer":null,"isStudent":0,"gender":null,"isCheat":0,"financeAdvisor":null,"recommender":null,"csyyUserId":null,"isNono":0,"isPayPassword":0,"isPhoto":0,"isSpecial":0,"userName":"1360396_1","status":1,"id":1000000899,"realName":null}}
+                <pre>{"errorCode":"0000000","succeed":true,"errorMessage":"成功","data":{"cardNeedcheck":0,"financeAdvisorManager":null,"isSync":1,"isBbsSync":0,"nonoIdChecked":0,"userType":2,"pcId":1,"idNum":null,"mobileNum":"18500764162","email":null,"isMobile":1,"isEmail":0,"isCard":0,"age":null,"isDunning":0,"isEducation":0,"userKey":"2e186962954b53447732c4f81b2d83fd","customerServicer":null,"isStudent":0,"gender":null,"isCheat":0,"financeAdvisor":null,"recommender":null,"csyyUserId":null,"isNono":0,"isPayPassword":0,"isPhoto":0,"isSpecial":0,"userName":"1850076_1","status":1,"id":1000000907,"realName":null}}
 成功
-{"errorCode":"0000000","succeed":true,"errorMessage":"成功","data":{"cardNeedcheck":0,"financeAdvisorManager":null,"isSync":1,"isBbsSync":0,"nonoIdChecked":0,"userType":2,"pcId":1,"idNum":null,"mobileNum":"15891350597","email":null,"isMobile":1,"isEmail":0,"isCard":0,"age":null,"isDunning":0,"isEducation":0,"userKey":"0f6a9130bd8c6d7e3824fdb1660c987e","customerServicer":null,"isStudent":0,"gender":null,"isCheat":0,"financeAdvisor":null,"recommender":null,"csyyUserId":null,"isNono":0,"isPayPassword":0,"isPhoto":0,"isSpecial":0,"userName":"1589135_1","status":1,"id":1000000900,"realName":null}}
 
 
 Traceback (most recent call last):
@@ -259,8 +258,8 @@ Traceback (most recent call last):
     testMethod()
   File "/Library/Python/2.7/site-packages/nose-1.3.7-py2.7.egg/nose/case.py", line 197, in runTest
     self.test(*self.arg)
-  File "/Users/luyue/Code/Python/loan_python/mzjk_cases/test_login.py", line 18, in test_user_register
-    assert hjson['errorMessage'] == '错误'
+  File "/Users/luyue/Code/Python/loan_python/mzjk_cases/test_login.py", line 14, in test_user_register
+    assert hjson['succeed'] == False
 AssertionError
 
                 </pre>
